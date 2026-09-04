@@ -1,30 +1,94 @@
-*.obj
-*.pdb
-*.ilk
-*.idb
-*.tlog
-*.log
-*.res
-*.ipch
-*.lib
-.vs/
-Debug/
-Release/
-Distribute/
-ipch/
-*.o
-*.a
-*.core
-OBJDIR/
-.depend/
-.depend.*
-*.exe
-*.dll
-*.epk
-*.eix
-yedek/
-fullbinary/
-*.tar.gz
-*.vdi
-*.rar
+## =========================================================================
+## Metin2 Development - Razuning Workspace .gitignore
+## =========================================================================
+
+# --- Root Archive & Temp Backups ---
 *.zip
+*.rar
+*.tar.gz
+*.7z
+yedek/
+gamemysql/
+
+# --- Client Source & Build Directories ---
+Client Source/.vs/
+Client Source/vs_files/
+Client Source/binary/
+Client Source/**/Debug/
+Client Source/**/Release/
+Client Source/**/Distribute/
+
+# Intermediate files generated during client compilation
+Client Source/**/*.lib
+Client Source/**/*.idb
+Client Source/**/*.obj
+Client Source/**/*.pch
+Client Source/**/*.pdb
+Client Source/**/*.ilk
+Client Source/**/*.tlog
+Client Source/**/*.log
+
+# --- Server Source (FreeBSD/Linux Make Build Artifacts) ---
+Server/**/.depend
+Server/**/.depend.*
+Server/**/*.o
+Server/**/*.a
+Server/game/game
+Server/db/db
+Server/**/core
+Server/**/core.[0-9]*
+
+# --- DumpProto Build & Artifacts ---
+DumpProto/.vs/
+DumpProto/**/Debug/
+DumpProto/**/Release/
+DumpProto/**/*.obj
+DumpProto/**/*.pdb
+DumpProto/**/*.idb
+DumpProto/**/*.exe
+
+# --- Fullbinary (Client Executables, Configs & Logs) ---
+# Derlenen çalıştırılabilir dosyalar (Repoyu şişirmemesi için)
+fullbinary/Metin2*.exe
+fullbinary/config.exe
+fullbinary/errorlog.exe
+
+# Otomatik oluşan loglar, dump ve ayar dosyaları
+fullbinary/log.txt
+fullbinary/syserr.txt
+fullbinary/syslog.txt
+fullbinary/ErrorLog.txt
+fullbinary/channel.inf
+fullbinary/mouse.cfg
+fullbinary/metin2.cfg
+fullbinary/locale.cfg
+fullbinary/account_list.txt
+fullbinary/imgui.ini
+fullbinary/*.bsc
+fullbinary/keysave
+
+# Ekran görüntüleri
+fullbinary/screenshot/
+
+# Client pack arşivleri (Yalnızca source dosyaları repoda kalmalı)
+fullbinary/pack/*.eix
+fullbinary/pack/*.epk
+
+# --- Visual Studio Standard Workspace Cleanup ---
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.VC.db
+*.VC.VC.opendb
+*.opendb
+*.opensdf
+*.sdf
+*.ipdb
+*.iobj
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.bak
