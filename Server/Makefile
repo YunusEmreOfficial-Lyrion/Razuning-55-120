@@ -1,4 +1,4 @@
-CC=ccacheg cc9
+CC=ccache gcc9
 CXX=ccache g++9
 
 PLATFORM = $(shell file /bin/ls | cut -d' ' -f3 | cut -d'-' -f1)
